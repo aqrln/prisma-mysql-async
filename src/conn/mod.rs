@@ -469,6 +469,7 @@ impl Conn {
         };
 
         self.inner.capabilities = handshake.capabilities() & self.inner.opts.get_capabilities();
+        dbg!(&handshake.server_version_str());
         self.inner.version = handshake
             .maria_db_server_version_parsed()
             .map(|version| {
