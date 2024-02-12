@@ -50,6 +50,8 @@ use crate::{
 
 use self::routines::Routine;
 
+use regex::Regex;
+
 pub mod binlog_stream;
 pub mod pool;
 pub mod routines;
