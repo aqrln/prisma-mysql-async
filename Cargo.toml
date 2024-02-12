@@ -38,6 +38,7 @@ tracing = { version = "0.1.37", default-features = false, features = ["attribute
 twox-hash = "1"
 url = "2.1"
 regex = "1.10.3"
+lexical = "6.1.0"
 
 [dependencies.tokio-rustls]
 version = "0.23.4"

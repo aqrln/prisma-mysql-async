@@ -507,9 +507,9 @@ impl Conn {
         FIXED_MARIADB_VERSION_RE.captures(version).map(|captures| {
             // Should not panic because validated with regex
             (
-                captures.get(1).unwrap().as_str().parse().unwrap(),
-                captures.get(2).unwrap().as_str().parse().unwrap(),
-                captures.get(3).unwrap().as_str().parse().unwrap(),
+                lexical::parse::<u16, _>(captures.get(1).unwrap().as_bytes()).unwrap(),
+                lexical::parse::<u16, _>(captures.get(2).unwrap().as_bytes()).unwrap(),
+                lexical::parse::<u16, _>(captures.get(3).unwrap().as_bytes()).unwrap(),
             )
         })
     }
